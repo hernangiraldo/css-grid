@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tamaño de columnas</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: [start] 1fr 1fr 1fr [destacado-end] 1fr 1fr [destacado-end2] 1fr 1fr [end];
+      grid-template-rows:  [start] 200px 200px [destacado-big] 200px 200px [end];
+      grid-gap: 5px;
+      height: 100vh;
+    }
+    .item {
+      background: lightblue;
+      padding: 10px;
+      border: 1px solid red;
+    }
+    .item:nth-of-type(1) {
+      grid-column: start / end;
+      grid-row: start / destacado-big;
+      /* grid-column: 1 / span 7;
+      grid-row: 1 / span 2; */
+    }
+    .item:nth-of-type(2) {
+      grid-column: start / destacado-end;
+      grid-row: destacado-big / end;
+      /* grid-column: 1 / span 3;
+      grid-row: 3 / span 2; */
+    }
+    .item:nth-of-type(3) {
+      grid-column: destacado-end / destacado-end2;
+      grid-row: destacado-big / end;
+      /* grid-column: 4 / span 2;
+      grid-row: 3 / span 2; */
+    }
+    .item:nth-of-type(4) {
+      grid-column: destacado-end2 / end;
+      grid-row: destacado-big / span 1;
+      /* grid-column: 6 / span 2;
+      grid-row: 3 / span 1; */
+    }
+  </style>
+</head>
+<body>
+  <section class="container">
+    <div class="item">contenido #1</div>
+    <div class="item">contenido #2</div>
+    <div class="item">contenido #3</div>
+    <div class="item">contenido #4</div>
+    <div class="item">contenido #5</div>
+    <div class="item">contenido #6</div>
+  </section>
+</body>
+</html>
