@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Colums</title>
+  <style>
+    body {
+      font-family: Arial;
+    }
+    .container {
+      display: grid;
+      grid-template: 80px 1fr 100px /  200px 1fr;
+      grid-template-areas: "header header" "left content" "footer footer";
+      grid-gap: 10px;
+      height: 100vh;
+    }
+    .item {
+      background: lightblue;
+      padding: 10px;
+      border: 1px solid red;
+    }
+    .header {
+      grid-area: header;
+    }
+    .left {
+      grid-area: left;
+    }
+    .content {
+      grid-area: content;
+    }
+    .footer {
+      grid-area: footer;
+    }
+  </style>
+</head>
+<body>
+  <section class="container">
+    <div class="item header">header</div>
+    <div class="item left">left</div>
+    <div class="item content">content</div>
+    <div class="item footer">footer</div>
+  </section>
+</body>
+</html>
