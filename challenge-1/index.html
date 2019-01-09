@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Challenge 1</title>
+</head>
+<body>
+  <section class="container">
+    <header class="header">
+      <div class="logo"></div>
+      <input class="search" type="text">
+      <div class="user-profile"></div>
+    </header>
+    <aside class="sidemenu">
+      <div class="general-buttons">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+      </div>
+      <button>4</button>
+    </aside>
+    <section class="videocontent">
+
+    </section>
+  </section>
+</body>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .container {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 90px 1fr;
+    grid-template-rows: 70px 1fr;
+    grid-template-areas: "header header" "sidemenu videocontent" 
+  }
+  .header {
+    grid-area: header;
+    background-color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  .sidemenu {
+    grid-area: sidemenu;
+    background-color: coral;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+  }
+  .sidemenu button {
+    background: yellow;
+    width: 70px;
+    height: 70px;
+  }
+  .sidemenu .general-buttons {
+    display: inline-block;
+    width: 70px;
+  }
+  .videocontent {
+    grid-area: videocontent;
+    background: lightcoral;
+  }
+  .logo {
+    width: 150px;
+    height: 45px;
+    background: lightblue;
+  }
+  .search {
+    width: 40%;
+    height: 45px;
+  }
+  .user-profile {
+    width: 200px;
+    height: 45px;
+    background: lightblue;
+  }
+  @media screen and (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 70px 90px 1fr;
+      grid-template-areas: "header" "sidemenu" "videocontent" 
+    }
+    .sidemenu {
+      flex-direction: row;
+      padding: 0 20px;
+    }
+    .sidemenu .general-buttons {
+      width: inherit;
+    }
+  }
+</style>
+</html>
